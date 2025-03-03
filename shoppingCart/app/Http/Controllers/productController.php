@@ -24,7 +24,6 @@ class productController extends AppBaseController
     public function displayGrid(Request $request)
     {
         $products=\App\Models\Product::all();
-        return view('products.displaygrid')->with('products',$products);
         
         if ($request->session()->has('cart')) {
             $cart = $request->session()->get('cart');
